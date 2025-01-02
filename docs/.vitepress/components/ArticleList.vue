@@ -18,7 +18,7 @@ const list = posts
     return rest
   })
 const jump = (path: string) => {
-  router.go('Capybara-pro' + path)
+  router.go('vitepress' + path)
 }
 </script>
 

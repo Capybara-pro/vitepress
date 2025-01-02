@@ -19,7 +19,7 @@ const autoSidebar = () => {
 }
 
 export default defineConfig({
-  base: '/Capybara-pro/',
+  base: '/vitepress/',
   title: '山不让尘，川不辞盈',
   description: 'A VitePress Site',
   vite: {
