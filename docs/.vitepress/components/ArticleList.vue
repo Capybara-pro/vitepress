@@ -7,18 +7,18 @@ import { EmailOutlined, DiscountOutlined } from '@vicons/material'
 import { data as posts } from '../utils/posts.data'
 const router = useRouter()
 const list = posts
-  .filter((item) => !item.url.includes('/pages/'))
-  .map((item) => ({
+  .filter(item => !item.url.includes('/pages/'))
+  .map(item => ({
     ...item,
-    unixDate: dayjs(item.frontmatter.date).unix(),
+    unixDate: dayjs(item.frontmatter.date).unix()
   }))
   .sort((a, b) => b.unixDate - a.unixDate)
-  .map((item) => {
+  .map(item => {
     const { unixDate, ...rest } = item
     return rest
   })
 const jump = (path: string) => {
-  router.go('vitepress-blog-template' + path)
+  router.go('Capybara-pro' + path)
 }
 </script>
 
