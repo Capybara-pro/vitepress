@@ -2,7 +2,7 @@
 
 一个基于 Vitepress 框架的个人简洁博客模板。
 
-查看效果：[dddhl.cn](https://www.dddhl.cn)
+查看效果：[capybara.cn](https://capybara-pro.github.io/vitepress/)
 
 <img src="./docs/public/index.png" style="border:1px solid #efefef" />
 
