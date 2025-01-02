@@ -37,7 +37,7 @@ const jump = (path: string) => {
     </section>
     <section class="right-wrapper">
       <n-timeline size="large">
-        <n-timeline-item v-for="item in list">
+        <n-timeline-item v-for="(item, i) in list" :key="i">
           <template #icon>
             <div class="icon">
               <p>{{ dayjs(item.frontmatter.date).format('YYYY-MM-DD') }}</p>
@@ -48,7 +48,12 @@ const jump = (path: string) => {
             <div class="card" @click="jump(item.url)">
               <div class="title">{{ item.frontmatter.title }}</div>
               <div class="tags">
-                <n-tag :bordered="false" type="info" v-for="tagItem in item.frontmatter.tags">
+                <n-tag
+                  :bordered="false"
+                  type="info"
+                  v-for="(tagItem, i) in item.frontmatter.tags"
+                  :key="i"
+                >
                   {{ tagItem }}
                   <template #icon>
                     <n-icon :size="16" :component="DiscountOutlined" />

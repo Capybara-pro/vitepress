@@ -10,11 +10,11 @@ const autoSidebar = () => {
     collapseDepth: 2,
     useTitleFromFrontmatter: true,
     sortMenusByFrontmatterDate: true,
-    sortMenusOrderByDescending: true,
+    sortMenusOrderByDescending: true
   })
-  return result.map((year) => ({
+  return result.map(year => ({
     ...year,
-    items: year.items.reverse(),
+    items: year.items.reverse()
   }))
 }
 
@@ -34,20 +34,20 @@ export default defineConfig({
             .replace(/[\u4E00-\u9FA5]/g, ' $& ')
             .replace(/\s+/g, ' ')
             .trim()
-        },
+        }
       }),
-      HeaderPlugin(),
+      HeaderPlugin()
     ],
     ssr: {
-      noExternal: ['naive-ui', 'date-fns', 'vueuc'],
+      noExternal: ['naive-ui', 'date-fns', 'vueuc']
     },
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern',
-        },
-      },
-    },
+          api: 'modern'
+        }
+      }
+    }
   },
   postRender(context) {
     const styleRegex = /<css-render-style>((.|\s)+)<\/css-render-style>/
@@ -79,17 +79,19 @@ export default defineConfig({
           {
             items: [
               { text: '实用网页', link: '/pages/webPage' },
-              { text: '工具插件', link: '/pages/tools' },
-            ],
-          },
-        ],
-      },
+              { text: '工具插件', link: '/pages/tools' }
+            ]
+          }
+        ]
+      }
     ],
 
     sidebar: autoSidebar(),
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/lee-holden/vitepress-blog-template' },
-    ],
-  },
+    socialLinks: [{ icon: 'github', link: 'https://github.com/Capybara-pro/vitepress.git' }],
+    editLink: {
+      pattern: 'https://github.com/Capybara-pro/vitepress/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    }
+  }
 })
